@@ -7,9 +7,7 @@ class Post < ActiveRecord::Base
 
   def non_clickbait
     if self.title != "Won't Believe" && self.title != "Secret" && self.title != /Top \d/ && self.title != "Guess"
-      errors.add(:title, "not sufficiently clickbait-y")
-    else
-      errors.add(:title, "sufficiently clickbait-y")
+      errors.add(:title, "Title not sufficiently clickbait-y")
     end
 
   end
